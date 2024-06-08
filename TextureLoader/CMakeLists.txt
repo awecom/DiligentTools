@@ -33,6 +33,7 @@ set(SOURCE
 
 add_library(Diligent-TextureLoader STATIC ${SOURCE} ${INCLUDE} ${INTERFACE})
 set_common_target_properties(Diligent-TextureLoader)
+set_target_properties(Diligent-TextureLoader PROPERTIES CXX_VISIBILITY_PRESET default)
 
 set_property(SOURCE src/PNGCodec.c src/Image.cpp
 APPEND PROPERTY INCLUDE_DIRECTORIES

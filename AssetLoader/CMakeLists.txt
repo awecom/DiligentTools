@@ -22,6 +22,7 @@ set(SOURCE
 
 add_library(Diligent-AssetLoader STATIC ${SOURCE} ${INCLUDE} ${INTERFACE})
 set_common_target_properties(Diligent-AssetLoader)
+set_target_properties(Diligent-AssetLoader PROPERTIES CXX_VISIBILITY_PRESET default)
 
 target_include_directories(Diligent-AssetLoader
 PUBLIC
