@@ -79,7 +79,7 @@ target_include_directories(Diligent-JSON INTERFACE json)
 # WARNING: JSON_DIAGNOSTICS must be consistently defined for all inclusions of json.hpp,
 #          or there will be hard-to-diagnose run-time crashes.
 #          It is required by RenderStatePackager even in release builds.
-# target_compile_definitions(Diligent-JSON INTERFACE JSON_DIAGNOSTICS=1)
+target_compile_definitions(Diligent-JSON INTERFACE JSON_DIAGNOSTICS=0)
 
 
 if (NOT DILIGENT_DEAR_IMGUI_PATH)

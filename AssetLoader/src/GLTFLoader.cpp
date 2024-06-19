@@ -813,7 +813,9 @@ Uint32 Model::AddTexture(IRenderDevice*     pDevice,
                 auto pTexInitData = PrepareGLTFTextureInitData(Image, AlphaCutoff, 1);
 
                 TextureDesc TexDesc;
-                TexDesc.Name      = "GLTF Texture";
+                std::string name("GLTF Texture " + CacheId);
+
+                TexDesc.Name      = name.c_str();
                 TexDesc.Type      = RESOURCE_DIM_TEX_2D_ARRAY;
                 TexDesc.Usage     = USAGE_DEFAULT;
                 TexDesc.BindFlags = BIND_SHADER_RESOURCE;

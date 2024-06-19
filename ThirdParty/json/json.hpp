@@ -27,6 +27,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE  OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+#define JSON_DIAGNOSTICS 0
+
 #ifndef INCLUDE_NLOHMANN_JSON_HPP_
 #define INCLUDE_NLOHMANN_JSON_HPP_
 
@@ -2787,6 +2789,7 @@ class exception : public std::exception
     static std::string diagnostics(const BasicJsonType& leaf_element)
     {
 #if JSON_DIAGNOSTICS
+        tata
         std::vector<std::string> tokens;
         for (const auto* current = &leaf_element; current->m_parent != nullptr; current = current->m_parent)
         {
@@ -18767,6 +18770,7 @@ class basic_json // NOLINT(cppcoreguidelines-special-member-functions,hicpp-spec
         JSON_ASSERT(m_type != value_t::string || m_value.string != nullptr);
         JSON_ASSERT(m_type != value_t::binary || m_value.binary != nullptr);
 
+#define JSON_DIAGNOSTICS 0
 #if JSON_DIAGNOSTICS
         JSON_TRY
         {
